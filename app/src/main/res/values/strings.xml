@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">HMSD</string>
+
+    <string name="error_server_unavailable">We\'ve logged the error from the server administrator, please try again later</string>
+    <string name="error_internet_connection">No Internet connection</string>
+    <string name="error_unexpected">Unexpected error</string>
+    <string name="error_http_error">Http error</string>
+
+</resources>
