@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".core.MainActivity"
+            android:name=".core.rocket.launch.RocketLaunchActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
         </activity>
 
         <activity
-            android:name=".core.feature1.Activity2"
+            android:name=".core.rocket.launch.RocketLaunchDetailActivity"
             android:screenOrientation="portrait" />
 
     </application>

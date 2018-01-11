@@ -8,11 +8,10 @@ import javax.inject.Inject
  */
 class RestApi @Inject constructor(val retrofit: Retrofit) {
 
-    fun createAuthorizationApi(): HmsdnApi = retrofit.create(HmsdnApi::class.java)
+    fun createRocketLaunchApi(): RocketLaunchApi = retrofit.create(RocketLaunchApi::class.java)
 
     companion object {
 
-        const val MIN_PAGE_SIZE = 20
         const val DEFAULT_PAGE_SIZE = 50
     }
 }

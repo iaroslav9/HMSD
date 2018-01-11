@@ -3,12 +3,14 @@ package com.iortynskyi.hmsd.di.modules
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.iortynskyi.hmsd.BuildConfig
 import com.iortynskyi.hmsd.di.scopes.NetworkScope
 import com.iortynskyi.hmsd.network.RestApi
 import com.iortynskyi.hmsd.network.rx.RxErrorCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -38,11 +40,17 @@ class NetModule {
     @NetworkScope
     @Provides
     fun provideHttpClient(): OkHttpClient {
-        return OkHttpClient.Builder()
+        val builder = OkHttpClient.Builder()
                 .readTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .connectTimeout(10, TimeUnit.SECONDS)
-                .build()
+        if (BuildConfig.DEBUG) {
+            val logging = HttpLoggingInterceptor()
+            logging.level = HttpLoggingInterceptor.Level.HEADERS
+            logging.level = HttpLoggingInterceptor.Level.BODY
+            builder.addNetworkInterceptor(logging)
+        }
+        return builder.build()
     }
 
     @NetworkScope
@@ -64,6 +72,6 @@ class NetModule {
 
     companion object {
 
-        private const val BASE_URL: String = ""
+        private const val BASE_URL: String = "https://launchlibrary.net/1.3/"
     }
 }

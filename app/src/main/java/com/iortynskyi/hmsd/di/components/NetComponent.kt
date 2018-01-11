@@ -1,6 +1,7 @@
 package com.iortynskyi.hmsd.di.components
 
-import com.iortynskyi.hmsd.base.mvp.NetworkInteractor
+import com.iortynskyi.hmsd.core.rocket.launch.di.LaunchComponent
+import com.iortynskyi.hmsd.core.rocket.launch.di.LaunchModule
 import com.iortynskyi.hmsd.di.modules.NetModule
 import com.iortynskyi.hmsd.di.scopes.NetworkScope
 import dagger.Subcomponent
@@ -9,5 +10,5 @@ import dagger.Subcomponent
 @Subcomponent(modules = [(NetModule::class)])
 interface NetComponent {
 
-    fun inject(target: NetworkInteractor)
+    fun plus(module: LaunchModule): LaunchComponent
 }

@@ -35,4 +35,8 @@
     <dimen name="app_text_size_xx_large">22sp</dimen>
     <dimen name="app_text_size_xxx_large">24sp</dimen>
 
+    <dimen name="line_separator">1dp</dimen>
+    <dimen name="launch_favorite_size">32dp</dimen>
+    <dimen name="rocket_top_image_width">192dp</dimen>
+
 </resources>

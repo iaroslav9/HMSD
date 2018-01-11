@@ -7,4 +7,13 @@
     <string name="error_unexpected">Unexpected error</string>
     <string name="error_http_error">Http error</string>
 
+    <string name="rocket_name">Rocket name: %s</string>
+    <string name="rocket_configuration">Rocket configuration: %s</string>
+    <string name="rocket_family_name">Rocket family name: %s</string>
+
+    <string name="location_country">Country: %s</string>
+    <string name="location_name">Location name: %s</string>
+
+    <string name="mission_name">Mission names: \n</string>
+
 </resources>

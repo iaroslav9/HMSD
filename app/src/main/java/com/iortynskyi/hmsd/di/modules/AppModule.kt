@@ -23,7 +23,6 @@ class AppModule(private val application: HmsdApplication) {
         return PreferenceManager.getDefaultSharedPreferences(application)
     }
 
-
     @ApplicationScope
     @Provides
     fun providePrefsManager(sharedPreferences: SharedPreferences): PrefsManager {
